@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sara Darwazeh</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+/* Bold & playful editorial: chunky rounded display + clean body, warm cream base filled with color blocks, marigold + magenta pops, hand-drawn doodle accents, big imagery, one dark "system" band for depth. English / LTR. */
+:root{
+  --paper:#FBF6EC; --card:#FFFFFF; --ink:#1B1A17; --ink-soft:#5A564D; --line:#EADFCB;
+  --mari:#F5A524; --mari-deep:#B9790A; --mari-bg:#FDEBC6;
+  --pink:#EC2D7A; --pink-bg:#FBD9E7; --pink-deep:#B01657;
+  --dark:#141210; --dark-card:#201C17; --dark-line:#322C24; --dark-ink:#F6EFE2; --dark-soft:#A79F90;
+  --maxw:1180px;
+  --fd:"Baloo 2","Poppins",system-ui,sans-serif;
+  --fb:"Poppins",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#141210; --card:#201C17; --ink:#F6EFE2; --ink-soft:#A79F90; --line:#322C24;
+  --mari:#FBB63E; --mari-bg:#3a2b0e; --pink:#FF5D97; --pink-bg:#3a1324; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#141210; --card:#201C17; --ink:#F6EFE2; --ink-soft:#A79F90; --line:#322C24;
+  --mari:#FBB63E; --mari-bg:#3a2b0e; --pink:#FF5D97; --pink-bg:#3a1324; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--fb);line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--fd);font-weight:800;margin:0;line-height:1.02;letter-spacing:-.01em}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:max(18px,env(safe-area-inset-left,0px)) max(18px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--fd);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);display:inline-flex;align-items:center;gap:8px}
+.muted{color:var(--ink-soft)}
+section{padding-block:clamp(42px,7vw,86px);position:relative}
+.sec-h{font-size:clamp(2rem,6vw,3.6rem);margin:.5rem 0 .3rem}
+.sec-sub{color:var(--ink-soft);max-width:60ch;font-size:1.02rem}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:61;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(12px);border-bottom:2px solid var(--ink)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.logo{font-family:var(--fd);font-weight:800;font-size:1.18rem;display:flex;align-items:center;gap:9px}
+.logo .dot{width:14px;height:14px;border-radius:50%;background:var(--mari);border:2px solid var(--ink);flex:none}
+.navlinks{display:flex;gap:20px;font-weight:600;font-size:.95rem}
+.navlinks a{text-decoration:none;color:var(--ink);opacity:.72}
+.navlinks a:hover{opacity:1;color:var(--pink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;text-decoration:none;border-radius:999px;padding:11px 20px;border:2px solid var(--ink);background:var(--mari);color:#1B1A17;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.btn:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+.btn.pink{background:var(--pink);color:#fff}
+.btn.plain{background:var(--card)}
+@media(max-width:720px){.navlinks{display:none}}
+
+/* hero */
+.hero{padding-top:clamp(26px,5vw,54px)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(20px,4vw,48px);align-items:center}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.photo-card{order:-1}.photo-wrap{aspect-ratio:1/1;max-width:230px;margin-inline:auto}}
+.hero h1{font-size:clamp(3rem,10vw,6.4rem);line-height:.94}
+.hero h1 .hl{color:var(--mari);-webkit-text-stroke:2px var(--ink);text-stroke:2px var(--ink)}
+.hero .tag{font-family:var(--fd);font-weight:700;font-size:clamp(1.05rem,3vw,1.5rem);margin-top:.5rem}
+.hero .lede{margin-top:.9rem;max-width:44ch;color:var(--ink-soft);font-size:1.05rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.4rem}
+.connected{font-family:var(--fd);font-weight:700;color:var(--pink);transform:rotate(-4deg);display:inline-block;margin-top:14px;font-size:1.1rem}
+.photo-card{position:relative;isolation:isolate}
+.photo-wrap{position:relative;border:3px solid var(--ink);border-radius:26px;overflow:hidden;background:var(--mari);box-shadow:8px 8px 0 var(--ink);aspect-ratio:4/4.4}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.badge{position:absolute;z-index:2;font-family:var(--fd);font-weight:700;background:var(--card);border:2px solid var(--ink);border-radius:999px;padding:7px 14px;box-shadow:3px 3px 0 var(--ink);font-size:.86rem}
+.badge.b1{top:-14px;right:-6px;background:var(--pink);color:#fff;transform:rotate(6deg)}
+.badge.b2{bottom:16px;left:-16px;background:var(--mari);transform:rotate(-5deg)}
+.doodle{position:absolute;pointer-events:none;z-index:1}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:clamp(28px,5vw,46px)}
+@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{border:2px solid var(--ink);border-radius:18px;background:var(--card);padding:18px 16px;box-shadow:4px 4px 0 var(--ink)}
+.stat:nth-child(2){background:var(--mari-bg)}
+.stat:nth-child(3){background:var(--pink-bg)}
+.stat .n{font-family:var(--fd);font-weight:800;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1}
+.stat .l{font-weight:600;color:var(--ink-soft);font-size:.9rem;margin-top:4px}
+
+/* toolkit */
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.tool{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);border-radius:12px;background:var(--card);padding:8px 13px;font-weight:600;font-size:.9rem}
+.tool .ic{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:.76rem;color:#fff}
+
+/* work gallery */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:clamp(22px,4vw,38px)}
+.item{grid-column:span 4;position:relative;border:3px solid var(--ink);border-radius:20px;overflow:hidden;background:var(--card);box-shadow:5px 5px 0 var(--ink);cursor:pointer;transition:transform .14s;aspect-ratio:1/1;text-align:left;padding:0;font:inherit;color:inherit;display:block;width:100%}
+.item:hover{transform:translate(-3px,-3px)}
+.item:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.item.wide{grid-column:span 6;aspect-ratio:16/10}
+.item.tall{aspect-ratio:3/4}
+@media(max-width:860px){.item{grid-column:span 6}.item.wide{grid-column:span 12}}
+@media(max-width:560px){.item,.item.wide{grid-column:span 12;aspect-ratio:4/3}}
+.item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.item:hover img{transform:scale(1.05)}
+.item .cap{position:absolute;inset:auto 0 0 0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px;background:linear-gradient(to top,rgba(10,8,6,.86),rgba(10,8,6,0));color:#fff}
+.item .cap b{font-family:var(--fd);font-weight:700;font-size:1.02rem}
+.item .cap .pill{font-size:.7rem;font-weight:700;background:var(--mari);color:#1B1A17;border-radius:999px;padding:3px 9px;white-space:nowrap}
+.item .plus{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:var(--card);border:2px solid var(--ink);display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:1.2rem;line-height:1}
+.showall-wrap{text-align:center}
+.showall{display:none!important;margin-top:18px}
+@media(max-width:640px){.item.extra{display:none}.gal.show .item.extra{display:block}.showall{display:inline-flex!important}}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(12,10,8,.62)}
+.modal.open{display:flex}
+.modal-box{background:var(--card);border:3px solid var(--ink);border-radius:22px;box-shadow:10px 10px 0 rgba(0,0,0,.35);max-width:900px;width:100%;max-height:88vh;overflow:auto;display:grid;grid-template-columns:1.05fr 1fr}
+@media(max-width:700px){.modal-box{grid-template-columns:1fr}}
+.modal-img{background:var(--paper);min-height:260px;display:flex;align-items:center;justify-content:center;padding:10px}
+.modal-img img{max-width:100%;max-height:80vh;width:auto;height:auto;object-fit:contain}
+.modal-body{padding:22px}
+.modal-body h3{font-size:1.7rem}
+.modal-row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.chip{font-weight:700;font-size:.78rem;border:2px solid var(--ink);border-radius:999px;padding:4px 11px;background:var(--mari-bg)}
+.kv{margin-top:14px}
+.kv .k{font-family:var(--fd);font-weight:700;font-size:.82rem;color:var(--pink);text-transform:uppercase;letter-spacing:.05em}
+.kv p{margin:2px 0 0;color:var(--ink-soft)}
+.modal-close{position:sticky;top:10px;float:right;margin:10px;width:38px;height:38px;border-radius:50%;border:2px solid var(--ink);background:var(--card);font-family:var(--fd);font-weight:800;font-size:1.2rem;cursor:pointer;z-index:2}
+
+/* nasaq dark band */
+.band-dark{background:var(--dark);color:var(--dark-ink);border-block:3px solid var(--ink)}
+.band-dark .eyebrow{color:var(--mari)}
+.band-dark .sec-sub{color:var(--dark-soft)}
+.nasaq-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,4vw,44px);align-items:center;margin-top:28px}
+@media(max-width:860px){.nasaq-grid{grid-template-columns:1fr}}
+.layers{display:grid;gap:10px;margin-top:18px}
+.layer{display:flex;gap:12px;align-items:center;border:2px solid var(--dark-line);border-radius:14px;padding:11px 14px;background:var(--dark-card)}
+.layer .n{font-family:var(--fd);font-weight:800;color:var(--mari);flex:none;width:26px}
+.layer b{font-family:var(--fd);font-weight:700}
+.layer span{color:var(--dark-soft);font-size:.9rem;margin-left:auto;text-align:right}
+.tagline-ai{margin-top:16px;font-size:.92rem;color:var(--dark-soft)}
+.tagline-ai b{color:var(--mari)}
+.devices{position:relative}
+.laptop{border:3px solid #000;border-radius:14px 14px 0 0;overflow:hidden;background:#000;box-shadow:8px 8px 0 rgba(0,0,0,.5)}
+.laptop img{width:100%;display:block}
+.laptop-base{height:16px;background:#2a2620;border:3px solid #000;border-top:0;border-radius:0 0 22px 22px}
+.phone{position:absolute;right:-6px;bottom:-14px;width:30%;max-width:150px;border:3px solid #000;border-radius:20px;overflow:hidden;background:#000;box-shadow:6px 6px 0 rgba(0,0,0,.5)}
+.phone img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover}
+.statusflag{display:inline-block;font-family:var(--fd);font-weight:700;font-size:.74rem;background:var(--pink);color:#fff;border-radius:999px;padding:4px 12px;margin-top:14px}
+
+/* research */
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+@media(max-width:820px){.rgrid{grid-template-columns:1fr}}
+.rcard{border:3px solid var(--ink);border-radius:18px;background:var(--card);padding:20px;box-shadow:5px 5px 0 var(--ink)}
+.rcard .ic{width:40px;height:40px;border-radius:11px;background:var(--pink-bg);border:2px solid var(--ink);display:grid;place-items:center;font-family:var(--fd);font-weight:800;color:var(--pink-deep);margin-bottom:12px}
+.rcard h3{font-size:1.2rem}
+.rcard p{color:var(--ink-soft);font-size:.92rem;margin-top:6px}
+
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+@media(max-width:820px){.tl{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.tl{grid-template-columns:1fr}}
+.step{border:2px solid var(--ink);border-radius:16px;background:var(--card);padding:16px;position:relative;box-shadow:4px 4px 0 var(--ink)}
+.step .k{font-family:var(--fd);font-weight:800;font-size:2rem;color:var(--mari);-webkit-text-stroke:1.5px var(--ink)}
+.step b{font-family:var(--fd);display:block;margin-top:2px;font-size:1.05rem}
+.step p{color:var(--ink-soft);font-size:.86rem;margin-top:4px}
+
+/* contact */
+.contact{text-align:center}
+.contact h2{font-size:clamp(2.2rem,7vw,4rem);margin-top:.4rem}
+.clinks{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+.copyrow{margin-top:16px;color:var(--ink-soft);font-size:.95rem}
+.copyrow b{color:var(--ink);font-weight:700;-webkit-user-select:all;user-select:all}
+footer{border-top:3px solid var(--ink);padding-block:22px;font-weight:600}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;color:var(--ink-soft);font-size:.86rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<header class="nav">
+  <div class="wrap">
+    <div class="logo"><span class="dot"></span>Sara Darwazeh</div>
+    <nav class="navlinks">
+      <a href="#work">Work</a><a href="#nasaq">Nasaq</a><a href="#research">Research</a><a href="#journey">Journey</a>
+    </nav>
+    <a class="btn pink" href="#contact">Let's talk</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Creative marketing &middot; designer who thinks in results</p>
+        <h1>Marketing<br>that <span class="hl">thinks</span><br>&amp; ships.</h1>
+        <p class="tag">Design &rarr; paid ads &rarr; strategy &rarr; systems.</p>
+        <p class="lede">A computer engineer who went all-in on marketing &mdash; 5 years hands-on across 15+ brands, from a single post to a whole system.</p>
+        <div class="connected">&rarr; it's all connected.</div>
+        <div class="hero-cta">
+          <a class="btn" href="#work">See the work</a>
+          <a class="btn plain" href="#nasaq">Meet Nasaq</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <span class="badge b1">Hi, I'm Sara &#10022;</span>
+        <span class="badge b2">5 yrs hands-on</span>
+        <div class="photo-wrap"><img src="assets/sara-photo.jpg" alt="Sara Darwazeh"></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n">15+</div><div class="l">Clients &amp; brands</div></div>
+      <div class="stat"><div class="n">1M+</div><div class="l">Views / reach</div></div>
+      <div class="stat"><div class="n">5 yrs</div><div class="l">Hands-on experience</div></div>
+      <div class="stat"><div class="n">10+</div><div class="l">Industries</div></div>
+    </div>
+
+    <div class="tools" aria-label="Tools I work in">
+      <span class="tool"><span class="ic" style="background:#001E36">Ps</span>Photoshop</span>
+      <span class="tool"><span class="ic" style="background:#330000;color:#FF9A00">Ai</span>Illustrator</span>
+      <span class="tool"><span class="ic" style="background:#00005B;color:#9999FF">Pr</span>Premiere</span>
+      <span class="tool"><span class="ic" style="background:#001E36;color:#9FD6FF">Lr</span>Lightroom</span>
+      <span class="tool"><span class="ic" style="background:#00005B;color:#9999FF">Ae</span>After Effects</span>
+      <span class="tool"><span class="ic" style="background:#0ACF83">Fi</span>Figma</span>
+      <span class="tool"><span class="ic" style="background:#0866FF">Ad</span>Meta Ads</span>
+      <span class="tool"><span class="ic" style="background:#111">Cc</span>CapCut</span>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <p class="eyebrow">&#9670; Selected work</p>
+    <h2 class="sec-h">Work that did a job.</h2>
+    <p class="sec-sub">Design and paid campaigns across industries. Tap any piece to see the brand, the goal, and the idea behind it.</p>
+    <div class="gal" id="gal"></div>
+    <div class="showall-wrap"><button class="btn plain showall" id="showall" type="button">Show all work</button></div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <p class="eyebrow">&#9670; Research that drives strategy</p>
+    <h2 class="sec-h">I study before I design.</h2>
+    <p class="sec-sub">Hands-on market &amp; digital-presence research — real audits for real clients, turned into marketing decisions.</p>
+    <div class="rgrid">
+      <div class="rcard"><div class="ic">01</div><h3>Digital-presence audit</h3><p>Full audit of a money-exchange brand's online presence, competitors and audience — mapped into a content &amp; positioning plan.</p></div>
+      <div class="rcard"><div class="ic">02</div><h3>BloomHoom study</h3><p>Digital-presence study for a consumer brand: where the audience is, what competitors own, and the gaps worth taking.</p></div>
+      <div class="rcard"><div class="ic">03</div><h3>Sector deep-dives</h3><p>Hands-on research across finance/exchange and health-tech — the raw material behind the strategy layer of Nasaq.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <p class="eyebrow">&#9733; The journey</p>
+    <h2 class="sec-h">Five years, one line.</h2>
+    <p class="sec-sub">I didn't jump between jobs — I kept adding layers, in parallel with an engineering degree.</p>
+    <div class="tl">
+      <div class="step"><div class="k">01</div><b>Graphic design</b><p>~2 years on social-media content &amp; brand visuals.</p></div>
+      <div class="step"><div class="k">02</div><b>Media buying</b><p>Took courses, then ran paid ads for the same clients.</p></div>
+      <div class="step"><div class="k">03</div><b>Strategy &amp; research</b><p>Market research, positioning, audiences &amp; goals.</p></div>
+      <div class="step"><div class="k">04</div><b>Building systems</b><p>Turned it all into Nasaq — a marketing system.</p></div>
+    </div>
+    <p class="muted" style="margin-top:18px;max-width:62ch">And yes — I'm a computer engineer (5th-year student, 5 years already in the field). <b style="color:var(--ink)">Jack of all trades, master of none — but oftentimes better than master of one.</b> &nbsp;<a href="https://github.com/SaraDarwazeh" target="_blank" rel="noopener" style="color:var(--pink);font-weight:700">See my GitHub ↗</a></p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center">&#10022; Let's work together</p>
+    <h2>Got a brand<br>that needs a brain?</h2>
+    <div class="clinks">
+      <a class="btn pink" href="https://wa.me/972594918677" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn" href="https://www.linkedin.com/in/sara-darwazeh-820950318" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn plain" href="https://github.com/SaraDarwazeh" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="copyrow">Email: <b>saradarwazeh14@gmail.com</b> &nbsp;&middot;&nbsp; Phone / WhatsApp: <b>+972 594 918 677</b></p>
+  </div>
+</section>
+
+<section class="band-dark" id="nasaq">
+  <div class="wrap">
+    <p class="eyebrow">&#9733; Flagship project</p>
+    <h2 class="sec-h">Nasaq &mdash; a marketing operating system.</h2>
+    <p class="sec-sub">I'm designing Nasaq: one core that runs the whole marketing loop &mdash; strategy, content, distribution, measurement &mdash; with a swappable industry pack. Strategy-first, with a memory that compounds into a moat. First pack: money-exchange &mdash; the hardest, most regulated case.</p>
+    <div class="nasaq-grid">
+      <div>
+        <div class="layers">
+          <div class="layer"><span class="n">01</span><b>Context</b><span>goals, constraints, data</span></div>
+          <div class="layer"><span class="n">02</span><b>Strategy</b><span>positioning &amp; brand voice, as memory</span></div>
+          <div class="layer"><span class="n">03</span><b>Content ops</b><span>pillars, calendar, phases</span></div>
+          <div class="layer"><span class="n">04</span><b>Production</b><span>design &amp; video &mdash; tools as adapters</span></div>
+          <div class="layer"><span class="n">05</span><b>Distribution</b><span>Meta API, WhatsApp routing</span></div>
+          <div class="layer"><span class="n">06</span><b>Measurement</b><span>one north-star, closes the loop</span></div>
+        </div>
+        <p class="tagline-ai"><b>Already live from the loop:</b> the brand's content + an AI customer agent for a money-exchange client. The strategy, content-ops &amp; measurement core is where the real moat is.</p>
+        <span class="statusflag">Strategy-first &middot; closed-loop &middot; human-in-the-loop</span>
+      </div>
+      <div class="devices">
+        <div class="laptop"><img src="assets/nasaq-dash.jpg" alt="Nasaq admin dashboard"></div>
+        <div class="laptop-base"></div>
+        <div class="phone"><img src="assets/nasaq-login.jpg" alt="Nasaq login"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>&copy; 2026 Sara Darwazeh</span><span>Creative Marketing &middot; Palestine</span></div></footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Project details">
+  <div class="modal-box">
+    <button class="modal-close" id="mClose" aria-label="Close">×</button>
+    <div class="modal-img"><img id="mImg" src="" alt=""></div>
+    <div class="modal-body">
+      <h3 id="mTitle"></h3>
+      <div class="modal-row"><span class="chip" id="mIndustry"></span><span class="chip" id="mRole"></span></div>
+      <div class="kv"><div class="k">Objective</div><p id="mObj"></p></div>
+      <div class="kv"><div class="k">The idea</div><p id="mIdea"></p></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const WORK=[
+ {img:"assets/car.jpg",cls:"",title:"Vehicle wrap",ind:"Automotive",role:"Graphic design",obj:"Turn a car into a moving billboard with instant brand recall.",idea:"A full wrap built to read fast at a glance and hold up on the street."},
+ {img:"assets/beauty-carousel.jpg",cls:"",title:"Beauty carousel",ind:"Beauty",role:"Concept · design · copy",obj:"Stop the scroll and speak to how women see themselves.",idea:"An empowerment angle carried across a swipe story."},
+ {img:"assets/suara-cake.jpg",cls:"",title:"Suara desserts",ind:"Bakery · F&B",role:"Social design · copy",obj:"Make dessert feel like a story worth ordering.",idea:"'Every slice tells a story' — warm, crave-first posts."},
+ {img:"assets/design-b.jpg",cls:"",title:"Turmusaya Exchange",ind:"Finance · remittance",role:"Social design · copy",obj:"Announce a UK transfer partnership and drive app installs.",idea:"Send from anywhere in the UK, collect at a Turmusaya branch in Palestine."},
+ {img:"assets/suryana-physio.jpg",cls:"",title:"Suryana physiotherapy",ind:"Healthcare",role:"Ad creative (paid)",obj:"Generate leads from people in pain, fast.",idea:"Show the pain point in one image, offer the answer in one tap."},
+ {img:"assets/design-a.jpg",cls:"",title:"Al Ameer Pharmacy",ind:"Pharmacy · kids health",role:"Social design · copy",obj:"Sell a kids' vitamin as the key to an energetic day.",idea:"A little superhero + the product — make a parent stop and smile."},
+ {img:"assets/muhja.jpg",cls:"",title:"Muhja",ind:"Mother & baby app",role:"Product branding",obj:"Brand a mother-&-baby product families can trust.",idea:"Gentle, caring identity — warmth over tech."},
+ {img:"assets/suara-cookie.jpg",cls:"",title:"Suara — cookies",ind:"Bakery · F&B",role:"Social design · copy",obj:"Make a craving land in a single frame.",idea:"Playful cookie post in the Suara brand voice."},
+ {img:"assets/suara-plate.jpg",cls:"",title:"Suara — sweet plate",ind:"Bakery · F&B",role:"Social series",obj:"Keep the feed consistent and appetizing.",idea:"'Especially for you' — a warm, repeatable series look."}
+];
+const gal=document.getElementById('gal');
+WORK.forEach((w,i)=>{
+  const b=document.createElement('button');
+  b.className='item '+w.cls+(i>=4?' extra':''); b.type='button';
+  b.innerHTML='<img src="'+w.img+'" alt="'+w.title+'" loading="lazy"><span class="plus">+</span>'
+    +'<span class="cap"><b>'+w.title+'</b><span class="pill">'+w.ind+'</span></span>';
+  b.addEventListener('click',()=>open(i));
+  gal.appendChild(b);
+});
+const sa=document.getElementById('showall');
+sa.textContent='Show all work ('+WORK.length+')';
+sa.addEventListener('click',()=>{const on=gal.classList.toggle('show');sa.textContent=on?'Show less':'Show all work ('+WORK.length+')';});
+const modal=document.getElementById('modal');
+function open(i){const w=WORK[i];
+  document.getElementById('mImg').src=w.img;
+  document.getElementById('mImg').alt=w.title;
+  document.getElementById('mTitle').textContent=w.title;
+  document.getElementById('mIndustry').textContent=w.ind;
+  document.getElementById('mRole').textContent=w.role;
+  document.getElementById('mObj').textContent=w.obj;
+  document.getElementById('mIdea').textContent=w.idea;
+  modal.classList.add('open');
+}
+function close(){modal.classList.remove('open')}
+document.getElementById('mClose').addEventListener('click',close);
+modal.addEventListener('click',e=>{if(e.target===modal)close()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+</script>
+
+</body>
+</html>
